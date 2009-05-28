@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+
+<!--
+************************************************************************
+K5Y1 Type 93 Trainer (a.k.a. Aka Tombo; Red Dragonfly)
+Created on May 23rd, 2009 by Tatsuhiro Nishioka
+$Id$
+************************************************************************
+-->
+
+<!-- Weight of everything but fuel -->
+<airplane mass="2204">
+
+  <!-- Approach configuration -->
+  <!-- approach speed @ 55kts, 3.5 aoa ; stalls at 50.5kt with no flaps, 
+       This tag is tweaked to meet the numbers above -->
+  <approach speed="50.5" aoa="7.0">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.00"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+    <control-setting axis="/controls/flight/flaps" value="0.0"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+  </approach>
+
+  <!-- Cruise configuration -->
+  <!-- Max Top speed;115.3 kt @ sea level -->
+  <cruise speed="115.3" alt="3280">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+    <control-setting axis="/controls/flight/flaps" value="0.0"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+  </cruise>
+
+  <!-- pilot's eyepoint -->
+  <cockpit x="1.33" y="0" z="0.86"/>
+
+  <!-- fuselage 1: engine cawl -->
+  <fuselage ax="3.76" ay="0.0" az="0.0" bx="3.49" by="0.0" bz="0.0"
+            width="1.24" taper="1.0" midpoint="0.5" idrag="0.2"/>
+  <!-- fuselage 2: front main fuselage -->
+  <fuselage ax="3.49" ay="0.0" az="0.0" bx="-0.09" by="0.0" bz="0.0"
+            cx="1.3" cy="1.3" cz="1.3"
+            width="1.08" taper="0.8" midpoint="0.4" idrag="0.2"/>
+  <!-- fuselage 3: rear main fuselage -->
+  <fuselage ax="-0.09" ay="0.0" az="0.0" bx="-3.38" by="0.0" bz="0.0"
+            cx="1.3" cy="1.3" cz="1.3"
+            width="1.08" taper="0.2" midpoint="0.0" idrag="0.2"/>
+  <!--
+    Wing characteristics; incidence, twist, camber, and idrag are 'guesstimate'
+   -->
+  <!-- Upper Wing -->
+  <wing x="2.32" y="0.0" z="1.15" taper="0.95" incidence="3.0"
+	length="5.49" chord="1.65" sweep="6.0" dihedral="3.0" camber="0.10"
+	twist="0.0" idrag="1.0">
+    <stall aoa="16" width="12" peak="1.5"/>
+    <flap0 start="0.4" end="1.0" lift="1.4" drag="1.1"/>
+    <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+    <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+    <control-speed control="FLAP0" transition-time="7"/>
+    <control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
+    <control-output control="FLAP0" side="left"
+		    prop="surface-positions/left-aileron-pos-norm"/>
+    <control-output control="FLAP0" side="right"
+	            prop="surface-positions/right-aileron-pos-norm"/>
+    <control-speed control="FLAP0" transition-time="0.7"/>
+    <control-input axis="/controls/flight/aileron-trim" control="FLAP0" split="true"/>
+  </wing>
+
+  <!-- Lower Left Wing; vstab can be used for secondary wing when dihedral is given -->
+  <vstab x="1.05" y="0.53" z="-0.58" taper="1.0" incidence="3.0"
+         length="4.487" chord="1.45" sweep="0.0" dihedral="3.0" camber="0.10"
+         twist="0.0" idrag="1.0">
+    <stall aoa="16" width="12" peak="1.5"/>
+    <flap0 start="0.5" end="1.0" lift="1.3" drag="1.1"/>
+    <control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
+    <control-input axis="/controls/flight/aileron-trim" control="FLAP0"/>
+    <control-speed control="FLAP0" transition-time="0.7"/>
+<!--
+    <control-output control="FLAP0" side="left"
+		    prop="surface-positions/left-aileron-pos-norm"/>
+    <control-output control="FLAP0" side="right"
+	            prop="surface-positions/right-aileron-pos-norm"/>
+-->
+  </vstab>
+
+  <!-- Lower Right Wing; vstab can be used for secondary wing when dihedral is given -->
+  <vstab x="1.05" y="-0.53" z="-0.58" taper="1.0" incidence="-3.0"
+         length="4.487" chord="1.45" sweep="0.0" dihedral="177.0" camber="-0.10"
+         twist="0.0" idrag="1.0">
+    <stall aoa="16" width="12" peak="1.5"/>
+    <flap0 start="0.5" end="1.0" lift="1.3" drag="1.1"/>
+    <control-input axis="/controls/flight/aileron" control="FLAP0" split="true"/>
+    <control-input axis="/controls/flight/aileron-trim" control="FLAP0"/>
+    <control-speed control="FLAP0" transition-time="0.7"/>
+<!--
+    <control-output control="FLAP0" side="left"
+		    prop="surface-positions/left-aileron-pos-norm"/>
+    <control-output control="FLAP0" side="right"
+	            prop="surface-positions/right-aileron-pos-norm"/>
+-->
+  </vstab>
+
+  <!-- Horizontal stabilizer and elevator -->
+  <hstab x="-3.20" y="0.13" z="0.39" taper="0.59" 
+	 length="1.91" chord="1.28" sweep="15" incidence="0.0" effectiveness="3.5">
+    <stall aoa="18" width="8" peak="1.5"/>
+    <flap0 start="0.0" end="1.22" lift="1.6" drag="1.4"/>
+    <control-input axis="/controls/flight/elevator" square="false" control="FLAP0"/>
+    <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+    <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <!-- Vertical stabilizer and elevator -->
+  <vstab x="-3.27" y="0" z="0.32" taper="0.36" effectiveness="3.5"
+	 length="1.09" chord="1.55" sweep="25">
+    <stall aoa="15" width="14" peak="1.5"/>
+    <flap0 start="-0.5" end="1" lift="1.6" drag="1.6"/>
+    <control-input axis="/controls/flight/rudder" square="true" control="FLAP0" invert="true"/>
+    <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+    <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"
+		    min="1" max="-1"/>
+  </vstab>
+
+  <!-- 
+    Propeller characteristics
+    mass is the weight of the engine. I don't know the weight of the propeller.
+               min-rpm="450" max-rpm="2100"
+   -->
+  <propeller   x="3.28" y="0" z="0"
+               radius="1.375"
+               mass="705" moment="12.67"
+               cruise-alt="3280" cruise-power="340"
+               cruise-speed="115.3" cruise-rpm="2100"
+               takeoff-power="300" takeoff-rpm="1800"
+               gear-ratio="1.0"
+	       >
+    <actionpt x="3.9" y="0" z="0"/>
+    <piston-engine 
+       eng-power="340" eng-rpm="2100"
+       displacement="1092"
+       compression="5.2"
+    >
+      <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+      <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
+      <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
+      <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+    </piston-engine>
+  </propeller>
+
+
+  <!-- left main -->
+  <gear x="2.32" y="1.10" z="-1.78" compression="0.1" spring="0.9" damp="1.2"
+	dfric="0.6" sfric ="0.70">
+    <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+    <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+  </gear>
+
+  <!-- right main -->
+  <gear x="2.32" y="-1.10" z="-1.78" compression="0.1" spring="0.9" damp="1.2"
+	dfric="0.6" sfric ="0.70">
+    <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+    <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+  </gear>
+
+  <!-- Tail wheel -->
+  <gear x="-3.67" y="0" z="-0.45" compression="0.1" castering="1"
+	dfric="0.3" sfric ="0.40">
+    <control-input axis="/controls/gear/tailwheel-lock" src0="0" src1="1"
+                   dst0="1" dst1="0" control="CASTERING"/>
+  </gear>
+
+  <tank x="2.36" y="0" z="-0.32" capacity="278.1"/>  <!-- 177 L -->
+  <tank x="1.52" y="0" z="-0.32" capacity="232.5"/>  <!-- 148 L -->
+
+  <!-- ballasts for adjusting CG and mass distribution -->
+  <ballast x="3.9" y="0" z="0" mass="44" /> <!-- propeller -->
+  <ballast x="3.3" y=" 0.3" z="0" mass="40" /> <!-- exhaust pipe -->
+  <ballast x="3.3" y="-0.3" z="0" mass="40" /> <!-- exhaust pipe -->
+  <ballast x="1.45" y="0" z="0.53" mass="25" /> <!-- Panel in front cockpit -->
+  <ballast x="0.47" y="0" z="0.48" mass="25" /> <!-- Panel in rear cockpit -->
+
+  <!-- pilot -->
+  <weight x="1.38" y="0" z="0.45" mass-prop="/sim/weight[0]/weight-lb" solver-weight="170"/>
+  <weight x="0.40" y="0" z="0.40" mass-prop="/sim/weight[1]/weight-lb" solver-weight="170"/>
+</airplane>
+

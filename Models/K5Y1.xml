@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<!-- 
+  K5Y1.xml - Animation configuration for K5Y1
+  Created on May 23rd, 2009 by Tatsuhiro Nishioka
+  $Id$
+-->
+
+<PropertyList>
+  <path>K5Y1.ac</path>
+
+ <!-- Propellers  -->
+  <model>
+    <path>Aircraft/K5Y1/Instruments/panel.xml</path>
+    <offsets>
+      <x-m>-1.76</x-m>
+      <y-m> 0.00</y-m>
+      <z-m> 0.52</z-m>
+    </offsets>
+    <pitch-deg>20</pitch-deg>
+  </model>
+
+ <animation>
+  <type>select</type>
+  <object-name>Propeller.Slow</object-name>
+  <condition>
+    <and>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value>450.000</value>
+      </greater-than>
+      <less-than>
+        <property>engines/engine[0]/rpm</property>
+        <value>1200.001</value>
+      </less-than>
+    </and>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>Propeller.Fast</object-name>
+  <condition>
+   <greater-than>
+    <property>engines/engine[0]/rpm</property>
+    <value>1200.000</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>propblades</object-name>
+  <condition>
+   <less-than>
+    <property>engines/engine[0]/rpm</property>
+    <value>500.001</value>
+   </less-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>propblades</object-name>
+  <property>engines/engine[0]/rpm</property>
+  <center>
+   <x-m>-3.9</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.0</z-m>
+  </center>
+  <axis>
+   <x>-1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>Propeller.Slow</object-name>
+  <property>engines/engine[0]/rpm</property>
+  <center>
+   <x-m>-1.629</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.043</z-m>
+  </center>
+  <axis>
+   <x>-1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>spin</type>
+  <object-name>Propeller.Fast</object-name>
+  <property>engines/engine[0]/rpm</property>
+  <center>
+   <x-m>-1.629</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.043</z-m>
+  </center>
+  <axis>
+   <x>-1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <!-- Elevator -->
+  <animation>
+    <type>rotate</type>
+    <object-name>elevator</object-name>
+    <property>controls/flight/elevator</property>
+    <factor>20</factor>
+    <center>
+      <x-m> 3.663 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.215 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+
+  <!-- Rudder -->
+  <animation>
+    <type>rotate</type>
+    <object-name>rudder</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>25</factor>
+    <center>
+      <x-m> 3.360 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 0.000 </y>
+      <z> 1.000 </z>
+    </axis>
+  </animation>
+
+  <!-- Ailerons -->
+  <animation>
+    <type>rotate</type>
+    <object-name>aileron.upper.Left</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <factor>-15.0</factor>
+    <center>
+      <x-m> -1.20 </x-m>
+      <y-m> -2.58 </y-m>
+      <z-m>  1.24 </z-m>
+    </center>
+  <axis>
+      <x1-m> -1.20 </x1-m>
+      <y1-m> -2.58 </y1-m>
+      <z1-m>  1.24 </z1-m>
+      <x2-m> -0.86 </x2-m>
+      <y2-m> -5.04 </y2-m>
+      <z2-m>  1.31 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>aileron.upper.Right</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <factor>-15.0</factor>
+
+    <center>
+      <x-m> -1.20 </x-m>
+      <y-m>  2.58 </y-m>
+      <z-m>  1.24 </z-m>
+    </center>
+
+    <axis>
+      <x1-m> -1.20 </x1-m>
+      <y1-m>  2.58 </y1-m>
+      <z1-m>  1.24 </z1-m>
+      <x2-m> -0.86 </x2-m>
+      <y2-m>  5.04 </y2-m>
+      <z2-m>  1.31 </z2-m>
+    </axis>
+
+  </animation>
+
+</PropertyList>
+
