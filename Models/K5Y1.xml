@@ -168,13 +168,11 @@
     <object-name>aileron.upper.Right</object-name>
     <property>surface-positions/left-aileron-pos-norm</property>
     <factor>-15.0</factor>
-
     <center>
       <x-m> -1.20 </x-m>
       <y-m>  2.58 </y-m>
       <z-m>  1.24 </z-m>
     </center>
-
     <axis>
       <x1-m> -1.20 </x1-m>
       <y1-m>  2.58 </y1-m>
@@ -183,8 +181,64 @@
       <y2-m>  5.04 </y2-m>
       <z2-m>  1.31 </z2-m>
     </axis>
-
   </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>aileron.lower.Left</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <factor>15.0</factor>
+    <center>
+      <x-m> -0.68 </x-m>
+      <y-m>  1.97 </y-m>
+      <z-m> -0.45 </z-m>
+    </center>
+    <axis>
+      <x1-m> -0.68 </x1-m>
+      <y1-m>  1.97 </y1-m>
+      <z1-m> -0.45  </z1-m>
+      <x2-m> -0.66 </x2-m>
+      <y2-m>  3.98 </y2-m>
+      <z2-m> -0.44 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>aileron.lower.Right</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <factor>15.0</factor>
+    <center>
+      <x-m> -0.68 </x-m>
+      <y-m> -1.97 </y-m>
+      <z-m> -0.67 </z-m>
+    </center>
+    <axis>
+      <x1-m> -0.68 </x1-m>
+      <y1-m> -1.97 </y1-m>
+      <z1-m> -0.45  </z1-m>
+      <x2-m> -0.66 </x2-m>
+      <y2-m> -3.98 </y2-m>
+      <z2-m> -0.44 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>hstab</object-name>
+    <property>surface-positions/flap-pos-norm</property>
+    <factor>1.0</factor>
+    <center>
+      <x-m>  3.53 </x-m>
+      <y-m>  0.00 </y-m>
+      <z-m>  0.36 </z-m>
+    </center>
+    <axis>
+      <x> 0.00 </x>
+      <y> 1.00 </y>
+      <z> 0.00 </z>
+    </axis>
+  </animation>  
 
 </PropertyList>
 
