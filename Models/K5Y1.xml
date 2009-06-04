@@ -8,17 +8,52 @@
 <PropertyList>
   <path>K5Y1.ac</path>
 
- <!-- Propellers  -->
   <model>
     <path>Aircraft/K5Y1/Instruments/panel.xml</path>
     <offsets>
-      <x-m>-1.76</x-m>
+      <x-m>-1.90</x-m>
       <y-m> 0.00</y-m>
-      <z-m> 0.52</z-m>
+      <z-m> 0.47</z-m>
     </offsets>
     <pitch-deg>20</pitch-deg>
   </model>
 
+  <model>
+    <path>Aircraft/K5Y1/Instruments/rearpanel.xml</path>
+    <offsets>
+      <x-m>-0.78</x-m>
+      <y-m> 0.00</y-m>
+      <z-m> 0.47</z-m>
+    </offsets>
+    <pitch-deg>20</pitch-deg>
+  </model>
+
+ <!-- Pilots -->
+  <animation>
+    <type>select</type>
+    <object-name>pilot.front</object-name>
+    <condition>
+      <greater-than>
+       <property>sim/current-view/view-number</property>
+       <value>0</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>pilot.rear</object-name>
+    <condition>
+      <not>
+        <equals>
+         <property>sim/current-view/view-number</property>
+         <value>8</value>
+        </equals>
+      </not>
+    </condition>
+  </animation>
+
+ <!-- Propellers  -->
  <animation>
   <type>select</type>
   <object-name>Propeller.Slow</object-name>

@@ -152,7 +152,7 @@ approach2: throttle 0.12, 1000rpm, 57kt, pitch +3, -109m/min
                mass="705" moment="12.67"
                cruise-alt="3280" cruise-power="340"
                cruise-speed="115.3" cruise-rpm="2100"
-               takeoff-power="300" takeoff-rpm="1850"
+               takeoff-power="300" takeoff-rpm="1800"
                gear-ratio="1.0"
 	       >
     <actionpt x="3.9" y="0" z="0"/>

@@ -1,0 +1,110 @@
+<!--
+  Cockpit model for K5Y1
+  Created on May 26th, 2009 by Tat Nishioka
+  $Id$
+-->
+     
+<PropertyList>
+
+<path>rearpanel.ac</path>
+
+ <model>
+   <path>Aircraft/K5Y1/Instruments/asi.xml</path>
+   <offsets>
+     <x-m> 0.0100</x-m>
+     <y-m>-0.0946</y-m>
+     <z-m> 0.072</z-m>
+   </offsets>
+ </model>
+ 
+ <model>
+   <path>Aircraft/K5Y1/Instruments/ai.xml</path>
+   <offsets>
+     <x-m> 0.0100</x-m>
+     <y-m> 0.0000</y-m>
+     <z-m> 0.0719</z-m>
+   </offsets>
+ </model>
+
+ <model>
+   <path>Aircraft/K5Y1/Instruments/turn.xml</path>
+   <offsets>
+     <x-m> 0.01</x-m>
+     <y-m>-0.09496</y-m>
+     <z-m>-0.0114855</z-m>
+   </offsets>
+ </model>
+
+ <model>
+   <path>Aircraft/K5Y1/Instruments/tach.xml</path>
+   <offsets>
+     <x-m> 0.010</x-m>
+     <y-m> 0.177665</y-m>
+     <z-m>-0.0178827</z-m>
+   </offsets>
+ </model>
+
+ <model>
+   <path>Aircraft/K5Y1/Instruments/vsi.xml</path>
+   <offsets>
+     <x-m> 0.010</x-m>
+     <y-m>0.0921419</y-m>
+     <z-m>-0.0388493</z-m>
+   </offsets>
+ </model>
+
+ <model>
+   <path>Aircraft/K5Y1/Instruments/oiltemp.xml</path>
+   <offsets>
+     <x-m> 0.0100</x-m>
+     <y-m>-0.1636</y-m>
+     <z-m> 0.0716</z-m>
+   </offsets>
+ </model>
+
+ <model>
+   <path>Aircraft/K5Y1/Instruments/FO-psi.xml</path>
+   <offsets>
+     <x-m> 0.01</x-m>
+     <y-m>-0.16357</y-m>
+     <z-m> 0.01377</z-m>
+   </offsets>
+ </model>
+
+ <model>
+   <path>Aircraft/K5Y1/Instruments/alt.xml</path>
+   <offsets>
+     <x-m>0.010</x-m>
+     <y-m> 0.177717</y-m>
+     <z-m> 0.0719286</z-m>
+   </offsets>
+ </model>
+
+<model>
+   <path>Aircraft/K5Y1/Instruments/directionalgyro.xml</path>
+   <offsets>
+     <x-m> 0.01</x-m>
+     <y-m> 0.005</y-m>
+     <z-m>-0.0112667</z-m>
+   </offsets>
+ </model>
+
+ <model>
+   <path>Aircraft/K5Y1/Instruments/magcompass.xml</path>
+   <offsets> 
+     <x-m> 0.010</x-m>
+     <y-m> 0.09172</y-m>
+     <z-m> 0.0749286</z-m>
+   </offsets>
+ </model>
+
+ <model>
+   <path>Aircraft/K5Y1/Instruments/magneto.xml</path>
+   <offsets> 
+     <x-m> 0.01</x-m>
+     <y-m>-0.16357</y-m>
+     <z-m>-0.0416624</z-m>
+   </offsets>
+ </model>
+
+</PropertyList>
