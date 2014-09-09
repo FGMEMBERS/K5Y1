@@ -1,0 +1,142 @@
+<!--
+    ************************************************************************
+    K5Y1 'Japanese Navy Type 93 Intermediate Training Airplane'
+    a.k.a. Aka Tombo (Red Dragonfly)
+    Created on May 24th, 2009 by Tatsuhiro Nishioka
+    $Id$
+    ************************************************************************
+  -->
+
+<PropertyList>
+  <sim>
+    <description>K5Y1 Aka Tombo (Type 93 Intermediate Trainig Airplane by Japanese Navy)</description>
+    <author>Tatsuhiro Nishioka</author>
+    <status>development</status>
+    <aircraft-version>0.1</aircraft-version>
+
+    <startup>
+      <splash-texture>Aircraft/K5Y1/splash.png</splash-texture>
+    </startup>
+    
+    <flight-model>yasim</flight-model>
+    <aero>K5Y1</aero>
+    <model>
+      <path>Aircraft/K5Y1/Models/K5Y1.xml</path>
+    </model> 
+
+    <fuel-fraction>1.00</fuel-fraction>
+
+    <weight n="0">
+      <name>Pilot</name>
+      <weight-lb>185</weight-lb>
+      <max-lb>200</max-lb>
+    </weight>
+
+    <weight n="1">
+      <name>Trainer</name>
+      <weight-lb>185</weight-lb>
+      <max-lb>200</max-lb>
+    </weight>
+
+    <virtual-cockpit archive="y">true</virtual-cockpit>
+    <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+    <sound>
+      <path>Aircraft/K5Y1/K5Y1-sound.xml</path>
+    </sound>
+
+    <systems>
+      <electrical>
+        <path></path>
+      </electrical>
+    </systems>
+
+    <view n="0">
+      <name>Front Cockpit</name>
+      <type>lookfrom</type>
+      <internal archive="y">true</internal>
+      <config>
+	<x-offset-m archive="y" type="double"> 0.00</x-offset-m>
+	<y-offset-m archive="y" type="double"> 0.86</y-offset-m>
+	<z-offset-m archive="y" type="double">-1.33</z-offset-m>
+	<pitch-offset-deg>-10.0</pitch-offset-deg>
+        <default-field-of-view-deg>80</default-field-of-view-deg>
+      </config>
+    </view>
+
+    <view n="100">
+      <name>Rear Cockpit</name>
+      <type>lookfrom</type>
+      <internal archive="y">true</internal>
+      <config>
+        <from-model type="bool">true</from-model>
+        <from-model-idx type="int">0</from-model-idx>
+	<x-offset-m archive="y" type="double"> 0.00</x-offset-m>
+	<y-offset-m archive="y" type="double"> 0.91</y-offset-m>
+	<z-offset-m archive="y" type="double">-0.34</z-offset-m>
+	<pitch-offset-deg>-7.0</pitch-offset-deg>
+        <default-field-of-view-deg>95</default-field-of-view-deg>
+      </config>
+    </view>
+    <chase-distance-m>-18</chase-distance-m>
+
+    <hud>
+      <enable3d>false</enable3d>
+    </hud>
+  </sim>
+
+  <engines>
+    <engine>
+      <rpm type="double">450</rpm>
+      <fuel-pump-psi type="double">4.27</fuel-pump-psi> <!-- 0.3kg/sq.m -->
+      <oil-pressure-psi type="double">49.77</oil-pressure-psi> <!-- 2.5kg/sq.m at idle -->
+    </engine>
+  </engines>
+
+  <consumables>
+    <fuel>
+      <tank n="0">
+	<level-gal_us>46.35</level-gal_us>
+      </tank>
+      <tank n="1">
+	<level-gal_us>38.75</level-gal_us>
+      </tank>
+    </fuel>
+  </consumables>
+
+  <controls>
+    <gear>
+      <gear-down>1</gear-down>
+    </gear>
+  </controls>
+  
+  <instrumentation>
+    <altimeter>
+      <indicated-altitude-m type="double">0</indicated-altitude-m>
+    </altimeter>
+    <magnetic-compass>
+      <correction-deg type="double">0</correction-deg>
+    </magnetic-compass>
+  </instrumentation> 
+  
+  <input>
+    <keyboard>
+      <key n="12"> 
+        <name>Ctrl-L</name>
+        <desc>Toggle Tailwheel Lock.</desc>
+        <binding> 
+          <command>property-toggle</command>
+          <property>controls/gear/tailwheel-lock</property>
+        </binding>
+      </key>
+    </keyboard>
+  </input>
+  
+  <nasal>
+    <K5Y1>
+      <file>Aircraft/A6M2/Nasal/electrical.nas</file>
+    </K5Y1>
+  </nasal>
+
+</PropertyList>
+
