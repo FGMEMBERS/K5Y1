@@ -14,6 +14,23 @@
     <status>development</status>
     <aircraft-version>0.1</aircraft-version>
 
+    <tags>
+      <tag>yokosuka</tag>
+      <tag>trainer</tag>
+      <tag>biplane</tag>
+      <tag>tail-dragger</tag>
+      <tag>fixed-gear</tag>
+      <tag>castering-wheel</tag>
+      <tag>single-engine</tag>
+      <tag>piston</tag>
+      <tag>single-engine</tag>
+      <tag>radial</tag>
+      <tag>1930s</tag>
+      <tag>1940s</tag>
+      <tag>ww2</tag>
+    </tags>
+     
+
     <startup>
       <splash-texture>Aircraft/K5Y1/splash.png</splash-texture>
     </startup>
